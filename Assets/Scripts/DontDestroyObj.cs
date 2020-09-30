@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DontDestroyObj : MonoBehaviour
@@ -8,12 +6,16 @@ public class DontDestroyObj : MonoBehaviour
     public static bool m_isCreated = false;
     AudioSource m_audio;
     DataHandler m_data;
+
     //check if the file is created to avoid duplicates
+    private void Awake()
+    {
+       // MoveToMainScene();
+    }
     private void Start()
     {
         if (!m_isCreated)
-        {
-          //  SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetSceneByName("Scenes/Main"));
+        {     
             m_audio = GetComponent<AudioSource>();
             DontDestroyOnLoad(this.gameObject);
             m_data = GetComponentInChildren<DataHandler>();
@@ -27,6 +29,13 @@ public class DontDestroyObj : MonoBehaviour
         }
 
     }
+
+    //void MoveToMainScene()
+    //{
+    //    Scene sceneDestination = SceneManager.GetSceneByName("Main");
+    //    SceneManager.MoveGameObjectToScene(gameObject, sceneDestination);
+    //    SceneManager.SetActiveScene(sceneDestination);
+    //}
 
     void StopMusic()
     {

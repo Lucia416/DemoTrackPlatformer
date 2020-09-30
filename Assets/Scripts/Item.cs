@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
 {
 
     //assigning value to items
-    public int m_itemId;
+ //   public int m_itemId;
     public Sprite m_sprite;
     public AudioSource m_audio;
     bool m_isRightTrack;
@@ -17,14 +17,15 @@ public class Item : MonoBehaviour
 
     private void Awake()
     {
-        m_itemStats = new ItemStats(m_itemId,m_isRightTrack, m_sprite, m_audio);
+        m_itemStats = new ItemStats(m_isRightTrack, m_sprite, m_audio);
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!m_isPickedUp) AddToTheInventory();
-       
+        Inventory.m_inventory.CheckListCount();
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)

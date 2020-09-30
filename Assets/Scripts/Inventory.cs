@@ -13,9 +13,9 @@ public class ItemStats
     public AudioSource m_audio;
     public bool m_isItemPickedUp { get; set; }
 
-    public ItemStats(int id, bool isRightTrack, Sprite sprite, AudioSource audio)
+    public ItemStats( bool isRightTrack, Sprite sprite, AudioSource audio)
     {
-        m_id = id;
+        //m_id = id;
         m_isRightTrack = isRightTrack;
         m_sprite = sprite;
         m_audio = audio;
@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
 
     //slots available in the inventory
     [HideInInspector]
-    public int m_availableSlots = 6;
+    public int m_availableSlots = 5;
 
     public Intro m_intro;
 
@@ -66,16 +66,21 @@ public class Inventory : MonoBehaviour
 
     public void AddToList(ItemStats itemStats)
     {
-        if (m_items.Count >= m_availableSlots)
+
+        m_items.Add(itemStats);
+    }
+
+    public void CheckListCount()
+    {
+        Debug.Log("count" + m_items.Count);
+        if (m_items.Count == m_availableSlots)
         {
+            DataHandler dataHandler = GetComponentInChildren<DataHandler>();
+            if (m_updateItemStatus != null) m_updateItemStatus.Invoke();
+            if (dataHandler.m_onStatusChanged != null) dataHandler.m_onStatusChanged.Invoke();
             m_panelSlot.SetActive(true);
             m_intro.StartPlayText();
-            if (m_updateItemStatus != null) m_updateItemStatus.Invoke();
-            DataHandler dataHandler = GetComponentInChildren<DataHandler>();
-            if (dataHandler.m_onStatusChanged != null) dataHandler.m_onStatusChanged.Invoke();
         }
-        m_items.Add(itemStats);
-
     }
 
     //WIP
