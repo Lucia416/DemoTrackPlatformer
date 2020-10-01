@@ -14084,7 +14084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: 73be9f1d9ef379e4b87cec7848c07823, type: 3}
-  m_audio: {fileID: 842607297}
   m_isPickedUp: 0
 --- !u!4 &842607295
 Transform:
@@ -14859,7 +14858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: c5ec8c9c875331f4588a3d072b1bb925, type: 3}
-  m_audio: {fileID: 1008348617}
   m_isPickedUp: 0
 --- !u!4 &1008348615
 Transform:
@@ -15362,7 +15360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: cf0dbb7f3e0918243aafefb5b3fc5561, type: 3}
-  m_audio: {fileID: 1040599130}
   m_isPickedUp: 0
 --- !u!4 &1040599128
 Transform:
@@ -16236,7 +16233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: 73be9f1d9ef379e4b87cec7848c07823, type: 3}
-  m_audio: {fileID: 1239823809}
   m_isPickedUp: 0
 --- !u!4 &1239823807
 Transform:
@@ -16705,7 +16701,7 @@ Transform:
   - {fileID: 718722716}
   - {fileID: 10741810}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401649889
 GameObject:
@@ -17302,7 +17298,7 @@ RectTransform:
   m_Children:
   - {fileID: 82958004}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17341,7 +17337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: c5ec8c9c875331f4588a3d072b1bb925, type: 3}
-  m_audio: {fileID: 1720188097}
   m_isPickedUp: 0
 --- !u!4 &1720188095
 Transform:
@@ -18643,7 +18638,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: cf0dbb7f3e0918243aafefb5b3fc5561, type: 3}
-  m_audio: {fileID: 2080756119}
   m_isPickedUp: 0
 --- !u!4 &2080756117
 Transform:

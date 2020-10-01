@@ -10,22 +10,30 @@ public class Item : MonoBehaviour
     //assigning value to items
  //   public int m_itemId;
     public Sprite m_sprite;
-    public AudioSource m_audio;
+    AudioSource m_audio;
     bool m_isRightTrack;
     public bool m_isPickedUp = false;
     ItemStats m_itemStats;
 
     private void Awake()
     {
+        m_audio = GetComponent<AudioSource>();
+        if (m_audio == null)
+        {
+            Debug.Log("Component empty on item");
+        }
         m_itemStats = new ItemStats(m_isRightTrack, m_sprite, m_audio);
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!m_isPickedUp) AddToTheInventory();
-        Inventory.m_inventory.CheckListCount();
-
+        if (!m_isPickedUp)
+        {
+            AddToTheInventory();
+            Inventory.m_inventory.CheckListCount();
+        }
+       
     }
 
     private void OnTriggerStay2D(Collider2D collision)

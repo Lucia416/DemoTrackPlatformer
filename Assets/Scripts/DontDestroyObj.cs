@@ -18,8 +18,8 @@ public class DontDestroyObj : MonoBehaviour
         {     
             m_audio = GetComponent<AudioSource>();
             DontDestroyOnLoad(this.gameObject);
-            m_data = GetComponentInChildren<DataHandler>();
-            m_data.m_onStatusChanged += StopMusic;
+
+            Inventory.m_inventory.m_updateItemStatus += StopMusic;
             m_isCreated = true;
         }
 

@@ -10,8 +10,6 @@ public class DataHandler : MonoBehaviour
     public GameObject m_restartPanel;
     public bool m_isDead = false;
 
-    public delegate void OnStatusChanged();
-    public OnStatusChanged m_onStatusChanged;
     private void Awake()
     {
         m_audio = GetComponent<AudioSource>();
@@ -23,8 +21,8 @@ public class DataHandler : MonoBehaviour
         Save();
         m_audio.Play();
         m_restartPanel.SetActive(true);
+        Inventory.m_inventory.m_updateItemStatus.Invoke();
         m_isDead = true;
-        if (m_onStatusChanged != null) m_onStatusChanged.Invoke();
     }
 
     private void Save()

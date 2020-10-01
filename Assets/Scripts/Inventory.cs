@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
 
     //slots available in the inventory
     [HideInInspector]
-    public int m_availableSlots = 5;
+    public int m_availableSlots = 6;
 
     public Intro m_intro;
 
@@ -73,13 +73,14 @@ public class Inventory : MonoBehaviour
     public void CheckListCount()
     {
         Debug.Log("count" + m_items.Count);
-        if (m_items.Count == m_availableSlots)
+        if (m_items.Count >= m_availableSlots)
         {
-            DataHandler dataHandler = GetComponentInChildren<DataHandler>();
-            if (m_updateItemStatus != null) m_updateItemStatus.Invoke();
-            if (dataHandler.m_onStatusChanged != null) dataHandler.m_onStatusChanged.Invoke();
             m_panelSlot.SetActive(true);
             m_intro.StartPlayText();
+            if (m_panelSlot.activeSelf)
+            {
+                m_updateItemStatus.Invoke();
+            }
         }
     }
 

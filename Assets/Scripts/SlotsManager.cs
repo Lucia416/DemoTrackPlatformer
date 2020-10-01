@@ -19,7 +19,7 @@ public class SlotsManager : MonoBehaviour
     {
         for (int i = 0; i < m_slots.Length; i++)
         {
-            if (i < Inventory.m_inventory.m_items.Count) 
+            if (i <= Inventory.m_inventory.m_items.Count) 
             {
                 m_slots[i].AddItem(Inventory.m_inventory.m_items[i]);  
             }

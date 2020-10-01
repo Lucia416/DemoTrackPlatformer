@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         if (m_isTestingOnPC)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A))
             {
                 m_isMoving = true;
                 m_isMovingRight = false;
@@ -84,11 +84,15 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (Input.GetKey(KeyCode.RightArrow))
+                if (Input.GetKey(KeyCode.D))
                 {
                     m_isMoving = true;
                     m_isMovingRight = true;
                     m_animator.SetBool("IsWalking", true);
+                }
+                else
+                {
+                    m_isMoving = false;
                 }
             }
             if (IsOnGround() && Input.GetKeyDown(KeyCode.Space))

@@ -76,11 +76,14 @@
     <None Include="Assets\GameSave\game_19.txt" />
     <None Include="Assets\GameSave\game_29.txt" />
     <None Include="Assets\GameSave\game_60.txt" />
+    <None Include="Assets\GameSave\game_74.txt" />
     <None Include="Assets\GameSave\game_20.txt" />
     <None Include="Assets\GameSave\game_2.txt" />
     <None Include="Assets\GameSave\game_47.txt" />
     <None Include="Assets\GameSave\game_67.txt" />
+    <None Include="Assets\GameSave\game_78.txt" />
     <None Include="Assets\GameSave\game_64.txt" />
+    <None Include="Assets\GameSave\game_76.txt" />
     <None Include="Assets\GameSave\game_48.txt" />
     <None Include="Assets\GameSave\game_3.txt" />
     <None Include="Assets\GameSave\game_4.txt" />
@@ -103,10 +106,12 @@
     <None Include="Assets\GameSave\game_10.txt" />
     <None Include="Assets\GameSave\game_15.txt" />
     <None Include="Assets\GameSave\game_12.txt" />
+    <None Include="Assets\GameSave\game_77.txt" />
     <None Include="Assets\GameSave\game_16.txt" />
     <None Include="Assets\GameSave\game_28.txt" />
     <None Include="Assets\GameSave\game_49.txt" />
     <None Include="Assets\GameSave\game_43.txt" />
+    <None Include="Assets\GameSave\game_75.txt" />
     <None Include="Assets\GameSave\game_70.txt" />
     <None Include="Assets\GameSave\game_51.txt" />
     <None Include="Assets\GameSave\game_53.txt" />
