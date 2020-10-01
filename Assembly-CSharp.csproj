@@ -115,6 +115,7 @@
     <None Include="Assets\GameSave\game_70.txt" />
     <None Include="Assets\GameSave\game_51.txt" />
     <None Include="Assets\GameSave\game_53.txt" />
+    <None Include="Assets\GameSave\game_80.txt" />
     <None Include="Assets\GameSave\game_54.txt" />
     <None Include="Assets\GameSave\game_63.txt" />
     <None Include="Assets\GameSave\game_9.txt" />
@@ -147,6 +148,7 @@
     <None Include="Assets\GameSave\game_62.txt" />
     <None Include="Assets\GameSave\game_11.txt" />
     <None Include="Assets\GameSave\game_33.txt" />
+    <None Include="Assets\GameSave\game_79.txt" />
     <None Include="Assets\GameSave\game_25.txt" />
     <None Include="Assets\GameSave\game_26.txt" />
     <None Include="Assets\GameSave\game_59.txt" />
