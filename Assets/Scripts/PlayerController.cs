@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     public bool m_dies = false;
 
+    //Se to true if we want to test on PC
+    public bool m_isTestingOnPC;
 
     Animator m_animator;
     CollisionDetection m_collisionDetection;
@@ -72,22 +74,51 @@ public class PlayerController : MonoBehaviour
             m_isJumping = false;
         }
 
+        if (m_isTestingOnPC)
+        {
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                m_isMoving = true;
+                m_isMovingRight = false;
+                m_animator.SetBool("IsWalking", true);
+            }
+            else
+            {
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    m_isMoving = true;
+                    m_isMovingRight = true;
+                    m_animator.SetBool("IsWalking", true);
+                }
+            }
+            if (IsOnGround() && Input.GetKeyDown(KeyCode.Space))
+            {
+                m_isJumping = true;
+                m_animator.Play("Jump");
+            }
+        }
     }
 
-   //this is called when the buttons are pressed the string keeps track of the button pressed
+    private void Update()
+    {
+        //use keyboard
+       
+    }
+
+    //this is called when the buttons are pressed the string keeps track of the button pressed
     public void MovementDetection(string movement)
     {
 
         if (movement == "Right")
         {
-            m_isMovingRight = true;
             m_isMoving = true;
+            m_isMovingRight = true;
             m_animator.SetBool("IsWalking", true);
         }
         else if (movement == "Left")
         {
-            m_isMovingRight = false;
             m_isMoving = true;
+            m_isMovingRight = false;
             m_animator.SetBool("IsWalking", true);
 
         }
