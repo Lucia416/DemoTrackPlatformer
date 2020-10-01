@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     public Transform m_initialPosition;
 
-
     private void Awake()
     {
         transform.position = m_initialPosition.position;
@@ -60,12 +59,19 @@ public class PlayerController : MonoBehaviour
         if (IsOnGround() && m_isJumping)
         {
             rb.velocity = Vector2.up * m_jumpVelocity;
+
+
         } //set to idle when no keys are played
         else if (IsOnGround() && !m_isJumping && !m_isMoving)
         {
             m_animator.Play("Idle");
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+        else if(!IsOnGround() && m_isJumping)
+        {
+            m_isJumping = false;
+        }
+
     }
 
    //this is called when the buttons are pressed the string keeps track of the button pressed
@@ -87,8 +93,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (movement == "Jump")
         {
-            m_isJumping = true;
-            m_animator.Play("Jump");
+            if(m_isJumping == false)
+            {
+                m_isJumping = true;
+                m_animator.Play("Jump");
+            }
 
         }
         else if (movement == "None")
@@ -100,15 +109,13 @@ public class PlayerController : MonoBehaviour
         {
             m_isJumping = false;
         }
-
-
     }
 
     private bool IsOnGround()
     {
-        //checks throught the raycast if the collider is touching the ground
-        float buffer = 1f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, buffer, m_platformMask);
+        float extraHeightText = 1f;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, extraHeightText, m_platformMask);
+        Debug.Log(raycastHit.collider);
         return raycastHit.collider != null;
     }
 
