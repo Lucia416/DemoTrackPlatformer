@@ -102,13 +102,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    private void Update()
-    {
-        //use keyboard
-       
-    }
-
     //this is called when the buttons are pressed the string keeps track of the button pressed
     public void MovementDetection(string movement)
     {
@@ -148,9 +141,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsOnGround()
     {
-        float extraHeightText = 1f;
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, extraHeightText, m_platformMask);
-        Debug.Log(raycastHit.collider);
         return raycastHit.collider != null;
     }
 
