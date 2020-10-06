@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsOnGround()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, extraHeightText, m_platformMask);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1, m_platformMask);
         return raycastHit.collider != null;
     }
 

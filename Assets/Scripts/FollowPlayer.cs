@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
     public float m_offset;
 
 //checking player position and follow it with camera
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (m_player && m_player.m_dies == false)
         {
